@@ -17,10 +17,14 @@ documents = loader.load()
 print(len(documents))
 text_splitter = CharacterTextSplitter(chunk_size=2500, chunk_overlap=0)
 texts = text_splitter.split_documents(documents)
-print(texts)
+# print(texts)
 
 docsearch = Chroma.from_documents(texts, embeddings)
-qa = RetrievalQA.from_chain_type(llm=OpenAI(), chain_type="stuff", vectorstore=docsearch)
+qa = RetrievalQA.from_chain_type(
+    llm=OpenAI(), 
+    chain_type="stuff", 
+    retriever=docsearch.as_retriever()
+)
 
 def query(q):
     print("Query: ", q)

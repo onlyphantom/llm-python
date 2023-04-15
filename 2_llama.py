@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 documents = SimpleDirectoryReader('news').load_data()
+
 index = GPTSimpleVectorIndex.from_documents(documents)
 
 # save to disk

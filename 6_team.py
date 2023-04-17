@@ -7,7 +7,7 @@ load_dotenv()
 
 def create_embedding_store(name):
     chroma_client = chromadb.Client()
-    return chroma_client.create_collection("newspieces")
+    return chroma_client.create_collection(name)
 
 def query_pages(collection, urls, questions):
     docs = TrafilaturaWebReader().load_data(urls)

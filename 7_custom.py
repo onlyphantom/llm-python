@@ -20,7 +20,8 @@ from llama_index import (
     ServiceContext
 )
 
-load_dotenv()
+# load_dotenv()
+os.environ["OPENAI_API_KEY"] = "random"
 
 def timeit():
     """
@@ -95,6 +96,7 @@ def execute_query():
         exclude_keywords=["petroleum"],
         # required_keywords=["coal"],
         # exclude_keywords=["oil", "gas", "petroleum"]   
+
     )
     return response
 
@@ -114,3 +116,4 @@ if __name__ == "__main__":
 
     response = execute_query()
     print(response)
+    print(response.source_nodes)

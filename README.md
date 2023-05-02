@@ -10,6 +10,7 @@ Learn LangChain from my YouTube channel:
 - Part 3: [LangChain + HuggingFace's Inference API (no OpenAI credits required!)](https://youtu.be/dD_xNmePdd0)
 - Part 4: [Understanding Embeddings in LLMs](https://youtu.be/6uyBc0jm1xQ)
 - Part 5: [Query any website with LLamaIndex + GPT3 (ft. Chromadb, Trafilatura)](https://youtu.be/6K1lyyzpxtk)
+- Part 6: [Locally-hosted, offline LLM w/LlamaIndex + OPT (open source, instruction-tuning LLM)](https://youtu.be/qAvHs6UNb2k)
 
 ### Quick Start
 1. Clone this repo

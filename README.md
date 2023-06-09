@@ -4,7 +4,7 @@ A set of instructional materials, code samples and Python scripts featuring LLMs
 <!-- <img src="assets/youtube.png" width="50%" alt="LangChain youtube tutorials" /> -->
 ![LangChain youtube tutorials](assets/llmseries.png)
 
-Learn LangChain from my YouTube channel (~5 hours of content); Each lesson is accompanied by the corresponding code in this repo and is designed to be self-contained -- while still focused on some key concepts in LLM (large language model) development and tooling. 
+Learn LangChain from my YouTube channel (~6 hours of content); Each lesson is accompanied by the corresponding code in this repo and is designed to be self-contained -- while still focused on some key concepts in LLM (large language model) development and tooling. 
 
 Feel free to pick and choose your starting point based on your learning goals:
 
@@ -19,6 +19,7 @@ Feel free to pick and choose your starting point based on your learning goals:
 | 7 | Locally-hosted, offline LLM w/LlamaIndex + OPT (open source, instruction-tuning LLM) | [Tutorial Video](https://youtu.be/qAvHs6UNb2k) | 32:27 |
 | 8 | Building an AI Language Tutor: Pinecone + LlamaIndex + GPT-3 + BeautifulSoup | [Tutorial Video](https://youtu.be/k8G1EDZgF1E) | 51:08 |
 | 9 | Building a queryable journal 💬 w/ OpenAI, markdown & LlamaIndex 🦙 | [Tutorial Video](https://youtu.be/OzDhJOR5IfQ) | 40:29 |
+| 10 | Making a Sci-Fi game w/ Cohere LLM + Stability.ai: Generative AI tutorial | [Tutorial Video](https://youtu.be/uR93yTNGtP4) | 1:02:20 |
 
 The full lesson playlist can be found [here](https://www.youtube.com/playlist?list=PLXsFtK46HZxUQERRbOmuGoqbMD-KWLkOS).
 
@@ -27,6 +28,7 @@ The full lesson playlist can be found [here](https://www.youtube.com/playlist?li
 2. Install requirements: `pip install -r requirements.txt`
 3. Some sample data are provided to you in the `news` foldeer, but you can use your own data by replacing the content (or adding to it) with your own text files.
 4. Create a `.env` file which contains your OpenAI API key. You can get one from [here](https://beta.openai.com/). `HUGGINGFACEHUB_API_TOKEN` and `PINECONE_API_KEY` are optional, but they are used in some of the lessons.
+    - [Lesson 10](./11_worldbuilding.py) uses Cohere and Stability AI, both of which offers a free tier (no credit card required). You can add the respective keys as `COHERE_API_KEY` and `STABILITY_API_KEY` in the `.env` file.
 
 The `.env` file should look like this:
 ```

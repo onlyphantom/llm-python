@@ -4,7 +4,7 @@ A set of instructional materials, code samples and Python scripts featuring LLMs
 <!-- <img src="assets/youtube.png" width="50%" alt="LangChain youtube tutorials" /> -->
 ![LangChain youtube tutorials](assets/llmseries.png)
 
-Learn LangChain from my YouTube channel (~6 hours of content); Each lesson is accompanied by the corresponding code in this repo and is designed to be self-contained -- while still focused on some key concepts in LLM (large language model) development and tooling. 
+Learn LangChain from my YouTube channel (~7 hours of LLM hands-on building tutorials); Each lesson is accompanied by the corresponding code in this repo and is designed to be self-contained -- while still focused on some key concepts in LLM (large language model) development and tooling. 
 
 Feel free to pick and choose your starting point based on your learning goals:
 
@@ -20,6 +20,8 @@ Feel free to pick and choose your starting point based on your learning goals:
 | 8 | Building an AI Language Tutor: Pinecone + LlamaIndex + GPT-3 + BeautifulSoup | [Tutorial Video](https://youtu.be/k8G1EDZgF1E) | 51:08 |
 | 9 | Building a queryable journal 💬 w/ OpenAI, markdown & LlamaIndex 🦙 | [Tutorial Video](https://youtu.be/OzDhJOR5IfQ) | 40:29 |
 | 10 | Making a Sci-Fi game w/ Cohere LLM + Stability.ai: Generative AI tutorial | [Tutorial Video](https://youtu.be/uR93yTNGtP4) | 1:02:20 |
+| 11 | GPT builds entire app from prompt (ft. SMOL Developer) | [Tutorial Video](https://www.youtube.com/watch?v=Ll_VIsIjuFg) | 41:33 | 
+
 
 The full lesson playlist can be found [here](https://www.youtube.com/playlist?list=PLXsFtK46HZxUQERRbOmuGoqbMD-KWLkOS).
 

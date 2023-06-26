@@ -49,3 +49,7 @@ As LlamaIndex and LangChain are both very new projects, if you're using the late
 
 ### Mentorship and Support
 I run a mentorship program under [Supertype Fellowship](https://fellowship.supertype.ai). The program is self-paced and free, with a community of other learners and practitioners around the world (English-speaking). You can optionally book a 1-on-1 session with my team of mentors to help you through video tutoring and code reviews.
+
+### License
+MIT © [Supertype](https://supertype.ai) 2023 
+

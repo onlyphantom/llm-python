@@ -1,8 +1,9 @@
-import openai
 from dotenv import load_dotenv
+load_dotenv()
+
+import openai
 import webbrowser
 
-load_dotenv()
 
 # list all models
 models = openai.Model.list()

@@ -1,15 +1,11 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader, load_index_from_storage, StorageContext
 from llama_index.storage.docstore import SimpleDocumentStore
 from llama_index.vector_stores import SimpleVectorStore
 from llama_index.storage.index_store import SimpleIndexStore
 from llama_index.graph_stores import SimpleGraphStore
-from dotenv import load_dotenv
-import os
-import openai
-
-load_dotenv()
-
-openai.api_key = os.getenv('OPENAI_API_KEY')
 
 documents = SimpleDirectoryReader('news').load_data()
 

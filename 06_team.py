@@ -1,9 +1,10 @@
 
 from dotenv import load_dotenv
-from llama_index import GPTChromaIndex, TrafilaturaWebReader
+load_dotenv()
+
+from llama_index import GPTVectorStoreIndex, TrafilaturaWebReader
 import chromadb
 
-load_dotenv()
 
 def create_embedding_store(name):
     chroma_client = chromadb.Client()
@@ -11,10 +12,11 @@ def create_embedding_store(name):
 
 def query_pages(collection, urls, questions):
     docs = TrafilaturaWebReader().load_data(urls)
-    index = GPTChromaIndex.from_documents(docs, chroma_collection=collection)
+    index = GPTVectorStoreIndex.from_documents(docs, chroma_collection=collection)
+    query_engine = index.as_query_engine()
     for question in questions:
         print(f"Question: {question} \n")
-        print(f"Answer: {index.query(question)}")
+        print(f"Answer: {query_engine.query(question)}")
 
 if __name__ == "__main__":
     url_list = ["https://supertype.ai", "https://supertype.ai/about-us"]

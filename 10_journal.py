@@ -1,8 +1,10 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 import argparse
 import logging
 import sys
 from pathlib import Path
-from dotenv import load_dotenv
 from llama_index import (
     ObsidianReader, 
     GPTVectorStoreIndex,
@@ -14,7 +16,6 @@ from llama_index import (
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
-load_dotenv()
 
 OBSIDIAN_DIR = "/home/samuel/vaults/fragments/journals"
 docs = ObsidianReader(OBSIDIAN_DIR).load_data()

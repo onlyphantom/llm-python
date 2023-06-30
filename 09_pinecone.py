@@ -1,7 +1,10 @@
+from dotenv import load_dotenv
+load_dotenv()
+
+
 import os
 from pathlib import Path
 import requests
-from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 
 import pinecone
@@ -11,14 +14,12 @@ from llama_index import (
     ServiceContext,
     GPTVectorStoreIndex,
     QuestionAnswerPrompt,
-    download_loader
+    PineconeReader
 )
 from llama_index.vector_stores import PineconeVectorStore
 from llama_index.storage.storage_context import StorageContext
 from langchain.chat_models import ChatOpenAI
 
-load_dotenv()
-# PineconeReader = download_loader("PineconeReader")
 # reader = PineconeReader(
 #     api_key=os.getenv("PINECONE_API_KEY"),
 #     environment="us-west4-gcp"

@@ -45,7 +45,11 @@ HuggingFace and Pinecone are optional but is recommended if you want to use the 
 5. Run the examples in any order you want. For example, `python 6_team.py` will run the website Q&A example, which uses GPT-3 to answer questions about a company and the team of people working at Supertype.ai. Watch the corresponding video to follow along each of the examples.
 
 ### Dependencies
-As LlamaIndex and LangChain are both very new projects, if you're using the latest version of these libraries, some of the code in this repo may need small adjustment. I will try to keep this repo up to date with the latest version of the libraries, but if you encounter any issues, please let me know. The code examples are tested on LlamaIndex 0.5.7 and LangChain 0.0.157.
+> 💡 Thanks to the work of @VanillaMacchiato, this project is updated as of **2023-06-30** to use the latest version of LlamaIndex (0.6.31) and LangChain (0.0.209). Installing the dependencies should be as simple as `pip install -r requirements.txt`. If you encounter any issues, please let me know.
+> 
+If you're watching the LLM video tutorials, they may have very minor differences (typically 1-2 lines of code that needs to be changed) from the code in this repo since these videos have been released with the respective versions at the time of recording (LlamaIndex 0.5.7 and LangChain 0.0.157). Please refer to the code in this repo for the latest version of the code.
+
+I will try to keep this repo up to date with the latest version of the libraries, but if you encounter any issues, please: (1) raise a discussion through Issues or (2) volunteer a PR to update the code.
 
 ### Mentorship and Support
 I run a mentorship program under [Supertype Fellowship](https://fellowship.supertype.ai). The program is self-paced and free, with a community of other learners and practitioners around the world (English-speaking). You can optionally book a 1-on-1 session with my team of mentors to help you through video tutoring and code reviews.
@@ -53,3 +57,7 @@ I run a mentorship program under [Supertype Fellowship](https://fellowship.super
 ### License
 MIT © [Supertype](https://supertype.ai) 2023 
 
+
+In a big data era increasingly defined by the velocity and volume of information, businesses are turning to streaming analytics to make sense of their data in real-time. Streaming data pipelines are designed for ingesting, processing, and analyzing data as it arrives from different sources, affording businesses the opportunity to act on the most up-to-date information available. 
+
+In this article, we’ll explore the benefits of streaming analytics and how to build an end-to-end streaming data pipeline using Apache Kafka, Apache Spark, Cassandra, MySQL, Streamlit and Docker.

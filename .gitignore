@@ -3,3 +3,4 @@ notes.md
 academy/
 *_x.py
 .vscode/
+*.db

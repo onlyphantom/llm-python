@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader
+from llama_index.storage import StorageContext
+from llama_index.vector_stores import ChromaVectorStore
 import chromadb
 
 #  https://docs.trychroma.com/embeddings
@@ -16,7 +18,9 @@ print(chroma_collection.count())
 
 documents = SimpleDirectoryReader('news').load_data()
 
-index = GPTVectorStoreIndex.from_documents(documents, chroma_collection=chroma_collection)
+vector_store = ChromaVectorStore(chroma_collection)
+storage_context = StorageContext.from_defaults(vector_store=vector_store)
+index = GPTVectorStoreIndex.from_documents(documents, storage_context=storage_context)
 print(chroma_collection.count())
 print(chroma_collection.get()['documents'])
 print(chroma_collection.get()['metadatas'])

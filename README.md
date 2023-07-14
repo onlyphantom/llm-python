@@ -23,6 +23,7 @@ Feel free to pick and choose your starting point based on your learning goals:
 | 11 | GPT builds entire party invitation app from prompt (ft. SMOL Developer) | [Tutorial Video](https://www.youtube.com/watch?v=Ll_VIsIjuFg) | 41:33 | 
 | 12 | A language for LLM prompt design: Guidance | [Tutorial Video](https://youtu.be/k4Ejc3bLQiU) | 43:15 | 
 | 13 | You should use LangChain's Caching! | [Tutorial Video](https://youtu.be/Uk_SJSnQRU8) | 25:37 |
+| 14 | Build Chat AI apps with Steamlit + LangChain | [Tutorial Video](https://youtu.be/7QR6hXx_Nms) | 32:11 |
 
 
 The full lesson playlist can be found [here](https://www.youtube.com/playlist?list=PLXsFtK46HZxUQERRbOmuGoqbMD-KWLkOS).

@@ -4,3 +4,4 @@ academy/
 *_x.py
 .vscode/
 *.db
+streamlit_agent/

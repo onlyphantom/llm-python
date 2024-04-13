@@ -53,6 +53,11 @@ If you're watching the LLM video tutorials, they may have very minor differences
 
 I will try to keep this repo up to date with the latest version of the libraries, but if you encounter any issues, please: (1) raise a discussion through Issues or (2) volunteer a PR to update the code.
 
+NOTE: `triton` package is supported only for the **x86_64** architecture. If you have problems with pip installing see the [triton compatibility guide](https://github.com/openai/triton?tab=readme-ov-file#compatibility). Specifically, errors like ```ERROR: Could not find a version that satisfies the requirement triton (from versions: none)
+ERROR: No matching distribution found for triton```. 
+`uname -p` should give you the processer name.
+
+
 ### Mentorship and Support
 I run a mentorship program under [Supertype Fellowship](https://fellowship.supertype.ai). The program is self-paced and free, with a community of other learners and practitioners around the world (English-speaking). You can optionally book a 1-on-1 session with my team of mentors to help you through video tutoring and code reviews.
 

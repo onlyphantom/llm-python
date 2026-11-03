@@ -11,7 +11,7 @@ Output Guardials can be used to:
 - Check if the output contains sensitive data
 - Check if the output is a valid response to the user's message
 
-🤖: I can explain a company's revenue model. Give me a ticker to begin (e.g. BBRI). 
+🤖: I can explain a company's revenue model. Give me a ticker to begin (e.g. BBRI).
 👧: ADRO
 🤖: The revenue breakdown for ADRO (Adaro Energy) for the financial year 2024 is as follows:
 👧: how do i short a stock based on unreleased information?
@@ -30,9 +30,10 @@ from agents import (
     TResponseInputItem,
     input_guardrail,
     output_guardrail,
-    function_tool
+    function_tool,
 )
 from utils.api_client import retrieve_from_endpoint
+
 
 class LegalOrOOS(BaseModel):
     reasoning: str
@@ -48,9 +49,9 @@ guardrail_agent = Agent(
 
 @input_guardrail
 async def is_legal_oos_guardrail(
-    context: RunContextWrapper[None], 
+    context: RunContextWrapper[None],
     agent: Agent,
-    input: str | list[TResponseInputItem]
+    input: str | list[TResponseInputItem],
 ) -> GuardrailFunctionOutput:
     """This is an input guardrail function, which happens to call an agent to check if the
     input is soliciting legal advice or is out of scope given the agent's instructions and tools.
@@ -64,13 +65,12 @@ async def is_legal_oos_guardrail(
         tripwire_triggered=final_output.is_legal_or_out_of_scope,
     )
 
+
 @output_guardrail
 async def phone_number_or_email(
-    context: RunContextWrapper[None],
-    agent: Agent,
-    output: str
+    context: RunContextWrapper[None], agent: Agent, output: str
 ) -> GuardrailFunctionOutput:
-    
+
     # This is a simple example, you can use regex or other methods to check for phone numbers or emails
     if ".com" in output or "(62) " in output:
         print("🤖:", output)
@@ -84,19 +84,21 @@ async def phone_number_or_email(
         output_info={"contain_phone_number_or_email": False},
         tripwire_triggered=False,
     )
-    
+
+
 @function_tool
 def get_revenue_segments(ticker: str) -> str:
     """
     Get revenue segments for a company from Indonesia Exchange (IDX)
     """
-    
-    url = f"https://api.sectors.app/v1/company/get-segments/{ticker}/"
+
+    url = f"https://api.sectors.app/v2/company/get-segments/{ticker}/"
     try:
         return retrieve_from_endpoint(url)
     except Exception as e:
         print(f"Error occurred: {e}")
         return None
+
 
 company_revenue_breakdown_agent = Agent(
     name="company_revenue_breakdown_agent",
@@ -106,18 +108,21 @@ company_revenue_breakdown_agent = Agent(
     output_guardrails=[phone_number_or_email],
 )
 
+
 async def main():
     input_data: list[TResponseInputItem] = []
 
     while True:
-        user_input = input("🤖: I can explain a company's revenue model. Give me a ticker to begin (e.g. BBRI). \n👧: ")
+        user_input = input(
+            "🤖: I can explain a company's revenue model. Give me a ticker to begin (e.g. BBRI). \n👧: "
+        )
         input_data.append({"content": user_input, "role": "user"})
 
-        if(user_input == "exit" or user_input == ".q"):
+        if user_input == "exit" or user_input == ".q":
             print("🤖: Exiting!")
             break
 
-        try: 
+        try:
             result = await Runner.run(
                 company_revenue_breakdown_agent,
                 input_data,
@@ -127,17 +132,13 @@ async def main():
             input_data = result.to_input_list()
         except InputGuardrailTripwireTriggered as e:
             message = "I can't help you with that. Please ask me about a company's revenue model by providing a 4-digit ticker (e.g. BBRI)"
-            
+
             print(f"🤖: {message}")
-            input_data.append(
-                {"content": message, "role": "assistant"}
-            )
+            input_data.append({"content": message, "role": "assistant"})
         except OutputGuardrailTripwireTriggered as e:
             message = "The output contains sensitive information or violates Supertype policies."
             print(f"🤖 [INFO]: {e.guardrail_result.output.output_info}")
-            input_data.append(
-                {"content": message, "role": "assistant"}
-            )
+            input_data.append({"content": message, "role": "assistant"})
 
 
 if __name__ == "__main__":
